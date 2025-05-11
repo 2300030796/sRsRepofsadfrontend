@@ -1,0 +1,167 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* Prevents extra space causing layout issues. */
+}
+
+:root {
+  --primary: #3a0ca3;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  --primary-light: #4361ee;
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --text-light: #ffffff;
+  --sidebar-width: 250px;
+  --transition: all 0.3s ease;
+  --radius: 8px;
+}
+
+/* Background Container */
+.bgimage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('bgimage2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute; /* Changed from fixed to absolute */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Keeps it behind everything */
+}
+
+/* Main Layout */
+.admin-dashboard {
+  display: flex;
+  height: 100ph;
+  width:100wh;
+  position: relative;
+  z-index: 1; /* Ensures layout is above the background */
+}
+
+/* Sidebar Navigation */
+.admin-nav {
+  width: var(--sidebar-width);
+  height: 100vh;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0); 
+  backdrop-filter: blur(10px); 
+  border-radius: 10px; 
+  outline: 20px;
+  /* box-shadow: 0 0 10px black; */
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  padding:  20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+  position: relative; /* Ensures it stays above the background */
+  z-index: 100;
+  top:0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  left:0;
+  overflow-y: auto;
+}
+
+
+.heading {
+  font-size: 20px;
+  font-family:'Playfair Display', serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+
+ 
+
+}
+
+
+.adminmenubar {
+  list-style: none;
+  padding: 0;
+}
+/* to remove dot in services */
+
+.adminmenubar li {
+  margin: 10px 0;
+}
+
+.admin-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-light);
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  /* Slight background for visibility */
+}
+
+.admin-link i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.admin-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active Link */
+.admin-link.active {
+  background-color: var(--primary-light);
+}
+
+/* Main Content */
+.admin-data {
+  flex-grow: 1;
+  padding: 30px;
+ /* Light background with transparency */
+  overflow-y: auto;
+  position: relative; /* Ensures it's above the background */
+  z-index: 5;color:white;
+  border-radius: var(--radius);
+ 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-nav {
+      width: 200px;
+      padding: 20px;
+  }
+
+  .admin-link {
+      font-size: 14px;
+    
+      padding: 10px;
+  }
+}
+
+
+.faculty-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.faculty-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.faculty-table th, .faculty-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.faculty-table th {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+
+

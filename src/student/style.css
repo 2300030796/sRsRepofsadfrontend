@@ -1,0 +1,137 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  :root {
+    --primary: #3a0ca3;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+    --primary-light: #4361ee;
+    --dark: #1a1a2e;
+    --light: #f8f9fa;
+    --text-light: #ffffff;
+    --sidebar-width: 250px;
+    --transition: all 0.3s ease;
+    --radius: 8px;
+  }
+  
+ 
+  .bgimage {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('bgimage2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+  }
+  
+ 
+  .student-dashboard {
+    display: flex;
+    height: 100ph;
+    width:100wh;
+    position: relative;
+    z-index: 1; 
+  }
+  
+  
+  .student-nav {
+    width: var(--sidebar-width);
+    height: 100vh;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px; 
+    outline: 20px;
+    
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    padding:  20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+    position: relative; 
+    z-index: 100;
+    top:0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    left:0;
+    overflow-y: auto;
+  }
+  
+  
+  .heading {
+    font-size: 20px;
+    font-family:'Playfair Display', serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  
+   
+  
+  }
+  
+  
+  .studentmenubar {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .studentnavbar li {
+    margin: 10px 0;
+  }
+  
+  .student-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 12px 15px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+  }
+  
+  .student-link i {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .student-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  .student-link.active {
+    background-color: var(--primary-light);
+  }
+  
+  .student-data {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    position: relative; 
+    z-index: 5;color:white;
+    border-radius: var(--radius);
+   
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .student-nav {
+        width: 200px;
+        padding: 20px;
+    }
+  
+    .student-link {
+        font-size: 14px;
+      
+        padding: 10px;
+    }
+    
+
+  }

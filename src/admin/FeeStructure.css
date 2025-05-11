@@ -1,0 +1,57 @@
+.fee-container {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-row label {
+  color: white;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.search-row select {
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(6px); /* Optional: glass effect */
+  color: white;
+}
+
+.fee-table th,
+.fee-table td {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px;
+  text-align: center;
+}
+
+.fee-table th {
+  background-color: rgba(255, 255, 255, 0.3); /* Light transparent header */
+  color: black;
+  font-weight: bold;
+}
+
+.fee-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.fee-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: background-color 0.3s ease;
+}
