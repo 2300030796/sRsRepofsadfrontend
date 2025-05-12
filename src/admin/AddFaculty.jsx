@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Faculty.css';
+import { useState } from 'react';
+import './faculty.css';
 import axios from 'axios'; 
 
 export default function AddFaculty() {
@@ -39,7 +39,7 @@ export default function AddFaculty() {
   };
 
   const addFaculty = (e) => {
-    e.preventDefault(); // Prevent form from submitting
+    e.preventDefault();
 
     const { facultyName, username, coursesAssigned, department, gender, contact, dob, password } = facultyData;
 
@@ -56,8 +56,6 @@ export default function AddFaculty() {
       alert("Please fill all the fields!");
       return;
     }
-
-    // Prepare data for sending to backend
     const faculty = {
       username,
       password,

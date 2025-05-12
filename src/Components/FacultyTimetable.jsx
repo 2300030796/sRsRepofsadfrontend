@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
-
+import { useEffect, useState, useMemo } from 'react';
 
 export default function FacultyTimeTable() {
   const [subjects, setSubjects] = useState([]);
@@ -69,12 +68,20 @@ export default function FacultyTimeTable() {
   const selectedDay = getWeekdayFromDate(selectedDate);
 
   return (
-    <div className="timetable-container">
-      <h2 style={{ textAlign: 'center', color: 'white' }}>
+    <div
+      style={{
+        backgroundColor: '#1e1e1e',
+        color: 'white',
+        padding: '20px',
+        fontFamily: 'Arial',
+        minHeight: '100vh',
+      }}
+    >
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
         Faculty Time Table - {academicYear} ({session}) - {semester} Semester
       </h2>
 
-      <div className="filters">
+      <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexWrap: 'wrap' }}>
         <label>
           Session:&nbsp;
           <input
@@ -82,12 +89,13 @@ export default function FacultyTimeTable() {
             value={session}
             onChange={(e) => setSession(e.target.value)}
             placeholder="2024-2025"
+            style={{ padding: '5px' }}
           />
         </label>
 
         <label>
           Academic Year:&nbsp;
-          <select value={academicYear} onChange={(e) => setAcademicYear(e.target.value)}>
+          <select value={academicYear} onChange={(e) => setAcademicYear(e.target.value)} style={{ padding: '5px' }}>
             <option>1st Year</option>
             <option>2nd Year</option>
             <option>3rd Year</option>
@@ -97,7 +105,7 @@ export default function FacultyTimeTable() {
 
         <label>
           Semester:&nbsp;
-          <select value={semester} onChange={(e) => setSemester(e.target.value)}>
+          <select value={semester} onChange={(e) => setSemester(e.target.value)} style={{ padding: '5px' }}>
             <option value="Odd">Odd</option>
             <option value="Even">Even</option>
           </select>
@@ -109,6 +117,7 @@ export default function FacultyTimeTable() {
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
+            style={{ padding: '5px' }}
           />
         </label>
       </div>
@@ -118,12 +127,20 @@ export default function FacultyTimeTable() {
           No timetable available for the selected date.
         </p>
       ) : (
-        <table className="timetable-table">
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            backgroundColor: '#2c2c2c',
+          }}
+        >
           <thead>
             <tr>
-              <th>Day / Time</th>
+              <th style={{ border: '1px solid #444', padding: '10px' }}>Day / Time</th>
               {timeSlots.map((slot, index) => (
-                <th key={index}>{slot}</th>
+                <th key={index} style={{ border: '1px solid #444', padding: '10px' }}>
+                  {slot}
+                </th>
               ))}
             </tr>
           </thead>
@@ -132,10 +149,11 @@ export default function FacultyTimeTable() {
               .filter((row) => !selectedDay || row.day === selectedDay)
               .map((row, idx) => (
                 <tr key={idx}>
-                  <td>{row.day}</td>
+                  <td style={{ border: '1px solid #444', padding: '10px' }}>{row.day}</td>
                   {row.slots.map((slot, i) => (
-                    <td key={i}>
-                      <strong>{slot.subject}</strong><br />
+                    <td key={i} style={{ border: '1px solid #444', padding: '10px' }}>
+                      <strong>{slot.subject}</strong>
+                      <br />
                       <span style={{ fontSize: '12px', color: '#ccc' }}>{slot.room}</span>
                     </td>
                   ))}

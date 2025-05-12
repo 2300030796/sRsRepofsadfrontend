@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import './Faculty.css'; // Using same CSS as AddFaculty
+import './faculty.css'; 
 
 export default function AddStudent() {
   const [studentData, setStudentData] = useState({

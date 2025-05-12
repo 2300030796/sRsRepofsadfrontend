@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Faculty.css'; // Use the same CSS as AddFaculty
+import { useState, useEffect } from 'react';
+import './faculty.css'; 
 
 export default function AddResult() {
   const [studentId, setStudentId] = useState("");

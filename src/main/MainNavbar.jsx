@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './HomePage';
-import About from './Aboutus';
-import Contact from './Contact';
+import ContactUs from './Contact';
+import AboutUs from './About';
 
 
 export default function MainNavBar() 
@@ -14,7 +14,7 @@ export default function MainNavBar()
   </div>
   <ul className="nav-links">
  <li><Link to="/about">About</Link></li> 
-  <li><Link to="/contactus">ContactUs</Link></li> 
+  <li><Link to="/contact">ContactUs</Link></li> 
       </ul>
 </nav> 
 
@@ -22,8 +22,8 @@ export default function MainNavBar()
    
       <Routes>
       <Route path="/" element={<HomePage />} exact />
-      <Route path="/about" element={<About />} exact />
-     <Route path="/contactus" element={<Contact />} exact />
+      <Route path="/about" element={<AboutUs />} exact />
+     <Route path="/contact" element={<ContactUs />} exact />
         </Routes>
 
     </div>

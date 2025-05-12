@@ -17,8 +17,7 @@ html, body {
     --transition: all 0.3s ease;
     --radius: 8px;
   }
-  
-  /* Background Container */
+
   .bgimage {
     width: 100vw;
     height: 100vh;
@@ -32,7 +31,6 @@ html, body {
     z-index: -1;
   }
   
-  /* Main Layout */
   .Faculty-Dashboard {
     display: flex;
     height: 100vh;
@@ -40,8 +38,7 @@ html, body {
     position: relative;
     z-index: 1;
   }
-  
-  /* Sidebar Navigation */
+
   .Faculty-nav {
     width: var(--sidebar-width);
     height: 100vh;
@@ -128,8 +125,7 @@ html, body {
   .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  
-  /* Main Content */
+
   .Faculty-data {
     flex-grow: 1;
     padding: 30px;
@@ -140,7 +136,7 @@ html, body {
     border-radius: var(--radius);
   }
   
-  /* Responsive Design */
+
   @media (max-width: 768px) {
     .Faculty-nav {
       width: 200px;

@@ -1,16 +1,15 @@
-/* Main content wrapper to center forms beside sidebar */
+
 .main-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin-left: 250px; /* Adjust this to match sidebar width */
+  margin-left: 250px;
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
 }
 
-/* Updated Feedback form container (dark theme) */
 .feedback-form-container {
   width: 450px;
   padding: 30px;

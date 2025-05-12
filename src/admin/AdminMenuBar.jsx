@@ -13,7 +13,7 @@ import AddCourse from './Courses';
 import AdminFeeInfo from './FeeStructure';
 import ScheduleExams from './ScheduleExams';
 import AddResult from './Results';
-import AddStudent from './AddStudent'; // ✅ You were missing this
+import AddStudent from './AddStudent'; 
 import AdminLogin from './AdminLogin';
 import Viewallstudents from './Viewallstudents';
 
@@ -23,7 +23,7 @@ export default function AdminMenuBar() {
 
   const handleLogout = () => {
     setIsAdminLoggedIn(false);
-    navigate('/'); // Redirect to main page
+    navigate('/'); 
   };
 
   return (

@@ -27,10 +27,10 @@
 .fee-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.1); 
   border-radius: 12px;
   overflow: hidden;
-  backdrop-filter: blur(6px); /* Optional: glass effect */
+  backdrop-filter: blur(6px); 
   color: white;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .fee-table th {
-  background-color: rgba(255, 255, 255, 0.3); /* Light transparent header */
+  background-color: rgba(255, 255, 255, 0.3); 
   color: black;
   font-weight: bold;
 }

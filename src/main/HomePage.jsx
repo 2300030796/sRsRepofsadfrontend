@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './main.css';
 
@@ -16,7 +15,9 @@ export default function HomePage() {
           }}>
             <img src="/faculty.jpg" alt="Faculty" />
           </button>
-          <button className="image-button">
+          <button className="image-button" onClick={()=>{
+            navigate("/student/login")
+          }}>
             <img src="/Student.jpg" alt="Student" />
           </button>
           <button className="image-button" onClick={() => navigate('/adminlogin')}>

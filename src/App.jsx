@@ -1,6 +1,4 @@
-// App.js
-import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import { AuthProvider, useAuth } from "./contextapi/AuthContext";
 
 import AdminLogin from './admin/AdminLogin';
@@ -15,8 +13,6 @@ import StudentLogin from './student/StudentLogin';
 
 function AppContent() {
   const { isAdminLoggedIn, isStudentLoggedIn, isFacultyLoggedIn } = useAuth();
-  
-  // Conditionally render navigation based on login state
   const renderNavBar = () => {
     if (isAdminLoggedIn) return <AdminMenuBar />;
     if (isStudentLoggedIn) return <StudentNavBar />;
@@ -30,10 +26,7 @@ function AppContent() {
       <Routes>
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/faclogin" element={<FacultyLogin />} />
-        <Route path="/studentlogin" element={<StudentLogin />} />
-
-        
-        {/* Add more routes as needed */}
+        <Route path="/student/login" element={<StudentLogin />} />
       </Routes>
     </>
   );

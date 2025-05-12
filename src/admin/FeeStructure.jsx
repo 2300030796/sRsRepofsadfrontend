@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './FeeStructure.css'; // Reuse or update CSS accordingly
+import './FeeStructure.css'; 
 
 export default function AdminFeeInfo() {
   const [academicYear, setAcademicYear] = useState('3rd Year');
@@ -8,7 +8,6 @@ export default function AdminFeeInfo() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    // Simulate fee structure data
     const allFeeData = {
       '3rd Year': {
         CSE: {

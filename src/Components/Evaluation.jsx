@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+import './newfac.css'; // This CSS contains the .faculty-box and related classes
 
 const Evaluation = () => {
-  const [evaluationData, setEvaluationData] = useState({
+  const [formData, setFormData] = useState({
     studentName: '',
     section: '',
     subject: '',
@@ -11,57 +11,72 @@ const Evaluation = () => {
   });
 
   const handleChange = (e) => {
-    setEvaluationData({
-      ...evaluationData,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleReset = () => {
+    setFormData({
+      studentName: '',
+      section: '',
+      subject: '',
+      examType: '',
+      marksObtained: '',
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const totalMarks = 100; // Fixed total marks
-    const percentage = ((parseFloat(evaluationData.marksObtained) / totalMarks) * 100).toFixed(2);
+    const percentage = ((parseFloat(formData.marksObtained) / 100) * 100).toFixed(2);
 
     const result = {
-      ...evaluationData,
+      ...formData,
       percentage: percentage + '%',
     };
 
-    console.log('Evaluation submitted:', result);
+    console.log('Evaluation Submitted:', result);
     alert(`Evaluation Submitted Successfully!\nPercentage: ${result.percentage}`);
   };
 
   return (
-    <div className="evaluation-container">
-      <h2 className="form-title">Student Evaluation</h2>
-      <form onSubmit={handleSubmit} className="evaluation-form">
-        <div className="form-group">
-          <label>Student Name:</label>
+    <div className="faculty-box">
+      <h2 className="form-title">Submit Student Evaluation</h2>
+      <form onSubmit={handleSubmit} className="form-fields">
+
+        <div className="form-row">
+          <label htmlFor="studentName">Student Name:</label>
           <input
             type="text"
+            id="studentName"
             name="studentName"
-            value={evaluationData.studentName}
+            value={formData.studentName}
             onChange={handleChange}
+            placeholder="Enter name"
             required
           />
         </div>
 
-        <div className="form-group">
-          <label>Section:</label>
+        <div className="form-row">
+          <label htmlFor="section">Section:</label>
           <input
             type="text"
+            id="section"
             name="section"
-            value={evaluationData.section}
+            value={formData.section}
             onChange={handleChange}
+            placeholder="Enter section"
             required
           />
         </div>
 
-        <div className="form-group">
-          <label>Subject:</label>
+        <div className="form-row">
+          <label htmlFor="subject">Subject:</label>
           <select
+            id="subject"
             name="subject"
-            value={evaluationData.subject}
+            value={formData.subject}
             onChange={handleChange}
             required
           >
@@ -73,35 +88,41 @@ const Evaluation = () => {
           </select>
         </div>
 
-        <div className="form-group">
-          <label>Exam Type:</label>
+        <div className="form-row">
+          <label htmlFor="examType">Exam Type:</label>
           <select
+            id="examType"
             name="examType"
-            value={evaluationData.examType}
+            value={formData.examType}
             onChange={handleChange}
             required
           >
-            <option value="">Select Exam Type</option>
+            <option value="">Select Exam</option>
             <option value="Quiz">Quiz</option>
             <option value="Midterm">Midterm</option>
             <option value="Final">Final</option>
           </select>
         </div>
 
-        <div className="form-group">
-          <label>Marks Obtained (out of 100):</label>
+        <div className="form-row">
+          <label htmlFor="marksObtained">Marks Obtained:</label>
           <input
             type="number"
+            id="marksObtained"
             name="marksObtained"
-            value={evaluationData.marksObtained}
+            value={formData.marksObtained}
             onChange={handleChange}
-            required
+            placeholder="0-100"
             min="0"
             max="100"
+            required
           />
         </div>
 
-        <button type="submit" className="submit-btn">Submit Evaluation</button>
+        <div className="button-group">
+          <button type="submit" className="faculty-button">Submit</button>
+          <button type="button" className="reset-button" onClick={handleReset}>Reset</button>
+        </div>
       </form>
     </div>
   );

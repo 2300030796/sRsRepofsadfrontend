@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './faculty.css'; // Use your existing CSS or create a separate one for courses
+import './faculty.css'; 
 
 export default function AddCourse() {
   const [courseData, setCourseData] = useState({

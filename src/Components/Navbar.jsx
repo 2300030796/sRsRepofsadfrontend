@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import {
   FaHome, FaUser, FaBuilding, FaGraduationCap, FaBook,
@@ -70,7 +70,7 @@ const { setIsFacultyLoggedIn } = useAuth();
             <li><Link to="/faculty/TimeTable" className='Faculty-link'><FaCalendarAlt /> FacultyTimetable</Link></li>
             <li><Link to="/faculty/Reports" className='Faculty-link'><FaGraduationCap /> Reports</Link></li>
 
-            {/* ✅ Logout Button */}
+            {/*  Logout Button */}
             <li>
               <button className="Faculty-link logout-button" onClick={handleLogout}>
                 <FaSignOutAlt /> Logout

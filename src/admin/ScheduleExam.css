@@ -1,4 +1,4 @@
-/* Container style - glass effect and center alignment */
+
 .exam-form-container {
     max-width: 500px;
     margin: 40px auto;
@@ -14,7 +14,6 @@
     transform: translate(-50%, -50%);
   }
   
-  /* Form heading */
   .exam-form-container h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -44,8 +43,6 @@
     outline: none;
     margin-bottom: 15px;
   }
-  
-  /* Placeholder color */
   .exam-form input::placeholder,
   .exam-form select {
     color: #333;
